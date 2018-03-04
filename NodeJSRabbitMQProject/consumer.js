@@ -69,13 +69,22 @@ function httpGetAsync(urlString, callback, ch, ex, msg, consumerName) {
 function translate(payload) {
   if (payload.method == 'create') {
     console.log('in');
-    // if !callerid || !short_desc
-    // return
-    /*const attributes = ['company', 'locaiton', 'category', 'subcategory'];
+    if (payload.messages !callerid || !short_desc) {
+      return
+
+    const attributes = ['caller_id', 'short_description', 'company', 'location', 'category', 'subcategory'];
 
     let requestBody = {
       caller_id: '',
       short_description: ''
+      company: ''
+      location: ''
+      category: ''
+      subcategory: ''
+
+
+
+
     };
 
     for (let i = 0; i < attributes.length; i++) {
